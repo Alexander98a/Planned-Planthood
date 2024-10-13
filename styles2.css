@@ -1,0 +1,225 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    padding: 0; 
+}
+
+/* Stilar för headern med bild och logotyp */
+.header {
+    position: relative;
+    width: 100%; /* Full bredd av skärmen */
+    height: 390px; /* Hög höjd för headern, anpassa vid behov */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Så att inget sträcker sig utanför */
+}
+
+/* Bilden för headern */
+.header-imagetwo {
+    width: 100%; 
+    height: 100%; /* Fyller hela höjden på headern */
+    object-fit: cover; /* Behåller proportionerna och fyller hela utrymmet */
+    position: absolute; /* Gör att vi kan lägga logotypen ovanpå */
+    top: 0;
+    left: 0;
+}
+
+/* Logotypen i mitten av headern */
+.header-logotwo {
+    position: absolute;
+    max-width: 200px; /* Begränsar storleken på logotypen */
+}
+
+/* Stil för h1 som ligger under logotypen */
+.header-title {
+    position: absolute;
+    color: white; 
+    font-size: 2rem; /* Justera storleken efter behov */
+    text-align: center;
+    bottom: 20px; /* Placera texten lite ovanför nederdelen av headern */
+    left: 50%;
+    transform: translateX(-50%); /* Centrera texten horisontellt */
+    margin: 0; /* Tar bort eventuell extra marginal */
+}
+
+/* Styling för plantering-formen */
+.plantering-form {
+    display: flex; 
+    flex-direction: column; /* Placerar textfälten under varandra */
+    align-items: center; /* Centrerar innehållet horisontellt */
+    gap: 20px; /* Skapar avstånd mellan textfälten */
+    padding: 20px; /* Lite padding runt formuläret */
+}
+
+/* Styling för h2 */
+.plantering-form h2 {
+    text-align: center; /* Centrerar texten */
+    font-size: 1.5rem; /* Justerar storleken */
+    margin-bottom: 20px; /* Skapar avstånd under rubriken */
+}
+
+/* Styling för input-fälten */
+.plantering-form input {
+    width: 350px; /* Gör textfälten bredare */
+    height: 50px;
+    padding: 10px; /* Lägger till padding för större fält */
+    font-size: 1rem; /* Justerar textstorleken */
+    margin: 0 auto; /* Centrerar fälten horisontellt */
+    border: 1px solid #ccc; /* Lägger till  kantlinje */
+    border-radius: 5px; /* Gör hörnen runda */
+}
+
+/* Knapp-styling */
+.add-btn {
+    padding: 10px 20px;
+    background-color: #0a846e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.planned-planting-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+
+.planned-planting-title {
+    text-align: center; /* Centrerar rubriken */
+    font-size: 1.5rem; /* Justera storleken om nödvändigt */
+    margin-bottom: 20px; /* Lägger till utrymme under rubriken */
+}
+
+/* Justera kortens storlek */
+.planting-card {
+    width: 100%;
+    max-width: 45%; /* Korten får en maxbredd */
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 200px;
+}
+
+
+.planting-image {
+    width: 100%; /* Full bredd av kortet */
+    height: 200px; /* Bevara proportioner */
+    object-fit: cover; /* Bilden täcker utrymmet proportionellt */
+    margin-bottom: 10px; /* Mellanrum under bilden */
+}
+
+.plant-name {
+    align-self: flex-start; /* Placera växtens namn till vänster */
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 10px 0 5px 0;
+    color: #000000;
+}
+
+/* Planteringsdatum */
+.plant-date {
+    align-self: flex-end;
+    font-size: 0.9rem;
+    color: #333;
+    margin: 0;
+}
+
+.planter-name {
+    align-self: flex-start;
+    font-size: 0.9rem;
+    color: #333;
+    margin: 5px 0 0 0; /* Lägg till mellanrum ovanför */
+}
+
+.new-planting-cards {
+    display: flex; /* Använd flexbox för att placera korten bredvid varandra */
+    justify-content: center; /* Centrerar korten horisontellt */
+    gap: 20px; /* Skapar mellanrum mellan korten */
+    margin-top: 20px;
+}
+
+/* Styling för de nya korten */
+.new-planting-card {
+    width: 100%;
+    max-width: 45%; /* Max bredd för varje nytt kort */
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Styling för den bruna rektangeln */
+.brown-rectangle {
+    background-color: #7B4F33; 
+    width: 100%; /* Full bredd */
+    height: 100%; /* Högre höjd för att ge mer utrymme för bilderna */
+    display: grid; 
+    grid-template-columns: 1fr 1fr; /* 2 kolumner */
+    grid-template-rows: 1fr 1fr; /* 2 rader */
+    justify-items: center; /* Centrerar bilderna horisontellt */
+    align-items: center; /* Centrerar bilderna vertikalt */
+    gap: 20px; /* Gap mellan bilderna */
+    padding: 40px; /* Padding runt hela rektangeln för att skapa utrymme */
+    box-sizing: border-box; /* Så att paddingen inte påverkar storleken */
+}
+
+/* Gemensam styling för bilderna */
+.cross-image {
+    width: 100%; /* Större storlek på bilderna */
+    height: 100%;
+    object-fit: cover; /* Fyller bildens yta utan att förvränga */
+}
+
+/* Placera bilderna i korsform med grid */
+.brown-rectangle img:nth-child(1) {
+    grid-column: 1; /* Placera första bilden i första kolumnen */
+    grid-row: 1; /* Placera första bilden i första raden */
+}
+
+.brown-rectangle img:nth-child(2) {
+    grid-column: 2; /* Placera andra bilden i andra kolumnen */
+    grid-row: 1; /* Placera andra bilden i första raden */
+}
+
+.brown-rectangle img:nth-child(3) {
+    grid-column: 1; /* Placera tredje bilden i första kolumnen */
+    grid-row: 2; /* Placera tredje bilden i andra raden */
+}
+
+.brown-rectangle img:nth-child(4) {
+    grid-column: 2; /* Placera fjärde bilden i andra kolumnen */
+    grid-row: 2; /* Placera fjärde bilden i andra raden */
+}
+
+footer {
+    background-color: #fff8f8;
+    color: rgb(0, 0, 0);
+    text-align: center; /* Det här centrerar texten horisontellt */
+    padding: 10px 0;
+    width: 100%; /* Säkerställer att footern täcker hela bredden av skärmen */
+    position: relative; /* Se till att footern positioneras korrekt */
+    bottom: 0;
+}
+
+.to-top {
+    color: rgb(3, 1, 1);
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.to-top:hover {
+    text-decoration: underline;
+}

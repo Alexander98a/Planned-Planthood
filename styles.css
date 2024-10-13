@@ -1,0 +1,466 @@
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    padding: 0; /* Ingen padding på kroppen */
+}
+
+/* Stilar för headern med bild och logotyp */
+.header {
+    position: relative;
+    width: 100%; /* Full bredd av skärmen */
+    height: 390px; /* Hög höjd för headern, anpassa vid behov */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Så att inget sträcker sig utanför */
+}
+
+/* Bilden för headern */
+.header-image {
+    width: 100%; /* Bilden täcker hela bredden */
+    height: 100%; /* Fyller hela höjden på headern */
+    object-fit: cover; /* Behåller proportionerna och fyller hela utrymmet */
+    position: absolute; /* Gör att vi kan lägga logotypen ovanpå */
+    top: 0;
+    left: 0;
+}
+
+/* Logotypen i mitten av headern */
+.header-logo {
+    position: absolute;
+    max-width: 200px; /* Begränsar storleken på logotypen */
+}
+
+/* Stilar för sektionen med boxarna */
+.logo-section {
+    display: flex;
+    flex-wrap: wrap; /* Gör så att boxarna kan radbrytas om det behövs */
+    margin: 0;
+}
+
+.logo-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+    padding: 10px;
+    margin: 0; /* Ingen marginal för att boxarna ska sitta ihop med varandra */
+    border: none;
+    flex: 1;
+}
+
+/* Färgade boxar */
+.brown-box {
+    background-color: #9e6d52; 
+}
+
+.green-box {
+    background-color: #0a846e; 
+}
+
+.box-logo {
+    max-width: 100px; /* Begränsar loggans storlek i boxarna */
+}
+
+/* Stilar för text-sektionen */
+.text-section {
+    text-align: center; /* Centrerar texten */
+    padding: 20px;
+    margin-top: 20px;
+}
+
+/* H1 och H2 taggar */
+.main-text {
+    font-size: 1.5rem; 
+    margin: 20px 0; /* Lite utrymme ovanför och under rubriken */
+    font-weight: bold; /* Fet text */
+    color: #0a846e;
+}
+
+.sub-text {
+    font-size: 1.5rem; 
+    margin-top: 20px; /* Lite utrymme ovanför och under H2 */
+    font-weight: normal; /* Vanlig textvikt */
+    color: #1e1e1e;
+}
+
+/* Text under H2 */
+.description-text {
+    font-size: 1.1rem;
+    color: #333; 
+    margin: 10px 0;
+    padding: 0 20px;
+}
+
+/* Knapp-styling */
+.so-tips-btn {
+    padding: 10px 20px;
+    background-color: #0a846e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* Grön cirkel */
+.circle {
+    width: 60vw; 
+    height: 60vw; 
+    max-width: 250px; /* Sätter ett maxmått för cirkeln på större skärmar */
+    max-height: 250px; /* Sätter maxhöjd för cirkeln på större skärmar */
+    background-color: #0a846e;
+    border-radius: 50%; /* Gör den rund */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto; /* Centrerar cirkeln horisontellt */
+    padding: 10px; /* Avstånd mellan cirkelns kant och loggan */
+}
+
+/* Loggan i cirkeln */
+.circle-logo {
+    width: 150px; /* Storlek på loggan i cirkeln */
+    height: auto;
+}
+
+/* linje under cirkeln */
+.circle-line {
+    width: 60%; /* Bredd på linjen */
+    height: 5px; /* Linjens höjd */
+    background-color: #055647;
+    border: none;
+    margin: 20px auto 0 auto; /* Centrerar linjen och ger ett avstånd ovanför */
+}
+
+/* Sektion för planerade planteringar */
+.planned-planting-section {
+    padding: 20px;
+    text-align: center;
+}
+
+.planned-planting-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.planting-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 kort per rad */
+    gap: 20px;
+    justify-items: center;
+}
+
+.planting-card {
+    width: 100%;
+    max-width: 300px; 
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.planting-image {
+    width: 100%; /* Full bredd av kortet */
+    max-width: 250px; /* Flexibel maxbredd */
+    height: 200px; 
+    object-fit: cover; /* Bilden täcker utrymmet proportionellt */
+    margin-bottom: 10px; /* Mellanrum under bilden */
+}
+
+/* Namn på grönsaken */
+.plant-name {
+    align-self: flex-start; /* Placera växtens namn till vänster */
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 10px 0 5px 0;
+    color: #000000;
+}
+
+/* Planteringsdatum */
+.plant-date {
+    align-self: flex-end;
+    font-size: 0.9rem;
+    color: #333;
+    margin: 0;
+}
+
+.planter-name {
+    align-self: flex-start;
+    font-size: 0.9rem;
+    color: #333;
+    margin: 5px 0 0 0; /* Lägg till mellanrum ovanför */
+}
+
+/* Icon till alla bilder*/
+.overlay-icon {
+    position: absolute; /* Gör loggan absolut positionerad */
+    top: 40%; /* Centrerar loggan vertikalt */
+    left: 50%; /* Centrerar loggan horisontellt */
+    transform: translate(-50%, -50%); /* Flyttar loggan tillbaka för att centrera exakt */
+    max-width: 100px; /* Justera storleken på loggan */
+    height: auto; /* Behåller proportionerna */
+    
+}
+
+.visa-fler-btn {
+    padding: 10px 20px;
+    background-color: #0a846e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-top: 30px;
+}
+
+/* Ny cirkel 2 (samma stil som den första cirkeln) */
+.circle-2 {
+    width: 60vw; 
+    height: 60vw; 
+    max-width: 250px; /* Maxstorlek på större skärmar */
+    max-height: 250px; /* Maxhöjd */
+    background-color: #0a846e; 
+    border-radius: 50%; /* Rund form */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto; /* Centrerar cirkeln horisontellt */
+    padding: 10px;
+}
+
+.planted-plants-btn {
+    padding: 10px 20px;
+    background-color: #0a846e; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    
+}
+
+/* Stilar för bild med mörk överläggning */
+.image-with-overlay {
+    position: relative;
+    width: 100%; /* Gör sektionen lika bred som skärmen */
+    height: 100%; /* Anpassa höjden efter behov */
+    overflow: hidden;
+}
+
+.image-container {
+    position: relative;
+    width: 100%; /* Full bredd */
+    height: 100%; /* Full höjd */
+    margin-left: 0;
+}
+
+.full-image {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover; /* Ser till att bilden fyller sektionen proportionellt */
+    display: block;
+}
+
+/* mörk överläggning på bilden */
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 0; /* Mörk överläggning startar från mitten av bilden */
+    width: 100%; /* Halva bilden är mörkare */
+    height: 50%; /* Fyller hela höjden */
+    background-color: rgba(0, 0, 0, 0.6); /* Mörk överläggning */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay-text {
+    color: white;
+    font-size: 2rem; 
+    font-weight: bold;
+}
+
+/* Placering av logotypen i den övre delen av bilden */
+.overlay-logo {
+    position: absolute; /* Absolut positionering */
+    top: 150px; /* Placera 150px från toppen av bilden */
+    left: 50%; /* Centrerar horisontellt */
+    transform: translateX(-50%); /* Exakt centrering */
+    
+}
+
+/* Placering och styling av kontaktinformation (telefon och e-post) */
+.contact-info {
+    position: absolute; /* Absolut positionering inom overlay */
+    color: white;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Avstånd mellan ikonen och texten */
+}
+
+.contact-info .icon {
+    width: 20px;
+    height: 20px; 
+}
+
+.contact-info.left {
+    bottom: 10px; /* Placera 10px från botten */
+    left: 10px; /* Placera 10px från vänster */
+}
+
+.contact-info.right {
+    bottom: 10px; /* Placera 10px från botten */
+    right: 10px; /* Placera 10px från höger */
+}
+
+footer {
+    background-color: #fff8f8;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+}
+
+.to-top {
+    color: rgb(3, 1, 1);
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.to-top:hover {
+    text-decoration: underline;
+}
+
+
+
+/* För större skärmar */
+@media (min-width: 768px) {
+    .planting-cards {
+        grid-template-columns: repeat(3, 1fr); /* 3 kort per rad på större skärmar */
+    }
+}
+
+/* Anpassning för desktop */
+
+@media (min-width: 768px) {
+    .main-container {
+        display: flex;              /* Gör så att header och logo-section placeras bredvid varandra */
+        flex-direction: row;        /* Placera dem i rad */
+    }
+
+    /* Justera headern */
+    .header {
+        width: 70%;                 /* Ge headern en bredd */
+        height: 390px;              /* Hög höjd för headern */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Sektion som innehåller boxarna */
+    .logo-section {
+        display: flex;              /* Gör så att boxarna placeras i rad */
+        flex-direction: column;     /* Justera till kolumn om skärmen är liten */
+        justify-content: center;    /* Centra boxarna vertikalt */
+        align-items: center;        /* Centra boxarna horisontellt */
+    }
+
+    /* Gör boxarna flexibla */
+    .logo-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 150px;
+        width: 300px;
+        border: none;
+        flex: 1;
+    }
+
+    /* Färgade boxar */
+    .brown-box {
+        background-color: #9e6d52; 
+    }
+
+    .green-box {
+        background-color: #0a846e; 
+    }
+
+    .box-logo {
+        max-width: 100px; /* Begränsar loggans storlek i boxarna */
+    }
+}
+
+/* Media query för desktop */
+@media (min-width: 768px) {
+    .full-image {
+        position: relative;
+        width: 100%; /* Full bredd av skärmen */
+        height: 390px; /* Hög höjd för headern, anpassa vid behov */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden; /* Så att inget sträcker sig utanför */
+    }
+    .overlay {
+        position: absolute;
+        top: 0%;
+        right: 50%;
+        left: 0%; 
+        width: 50%; /* Halva bilden är mörkare */
+        height: 100%; /* Fyller hela höjden */
+        background-color: rgba(0, 0, 0, 0.6); /* Mörk överläggning */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .overlay-logo {
+        position: absolute; /* Absolut positionering */
+        top: 100px; 
+        left: 75%; /* Centrerar horisontellt */
+        
+        
+    }
+}
+
+/* Stilar för navigationsbaren */
+.navbar {
+    background-color: #f8f7f7; /* Mörk bakgrundsfärg */
+    padding: 10px; /* Avstånd runt navigationsbaren */
+    display: none;
+}
+
+.nav-list {
+    list-style-type: none; /* Ta bort punkter från listan */
+    margin: 0; 
+    padding: 0; 
+    display: flex; /* Använd flexbox för att ordna länkar horisontellt */
+    justify-content: space-around; 
+}
+
+.nav-item {
+    margin: 0 15px; /* Avstånd mellan länkar */
+}
+
+.nav-item a {
+    color: #055647; /* Länkfärg */
+    text-decoration: none; /* Ta bort understrykning */
+    font-size: 16px; /* Länkens textstorlek */
+}
+
+.nav-item a:hover {
+    text-decoration: underline; /* Understrykning vid hover */
+}
+
+@media (min-width: 768px) {
+    .navbar {
+        display: block; /* Visar nav bar när skärmstorleken är minst 768px */
+    }
+}
